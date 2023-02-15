@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sig_crg/camaraview.dart';
+import 'package:sig_crg/formularioview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -105,11 +107,25 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: Column(
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const CamaraView()));},
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const FormularioView()));},
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+        ],
+      ) // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
